@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>身份认证</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="/css/style.css" rel='stylesheet' type='text/css'/>
+	<script type="text/javascript">{{}}</script>
+	<script type="text/javascript" charset="UTF-8" src="/js/ui-notify.js"></script>
+	<script type="text/javascript">
+		var locked=false;
+        var loader=(function () {
+            var loader=new XMLHttpRequest();
+            loader.onload=function () {
+                var str=loader.responseText;
+                console.log(str);
+                if(str==='true'){
+                    Notify.toast('恭喜您通过认证，即刻跳转您之前的访问页面！');
+                    setTimeout(function () {
+                        window.location.href=target;
+                    },1000);
+                }else{
+                    locked=str==='0';
+                    Notify.toast('登录凭证不正确，您还有'+str+'次尝试机会。');
+                };
+            };
+            return loader;
+        })();
+
+        var login=function() {
+            if(locked)Notify.toast('您的设备已被禁止连入wifi网络，如有疑问，请联系管理员。');
+            else{
+                var pass = document.getElementById("password");
+                if (!pass.value) Notify.toast('请输入登录凭证');
+                else {
+                    loader.open("POST",'/door.php?z=0');
+                    loader.send('["checkin",["'+pass.value+'"]]');
+                };
+			};
+        };
+	</script>
+    <style>
+        .button {
+            color: red;
+        }
+        .button .notify_confirm {
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+<div class="login-form">
+	<div class="avtar">
+		<img src="/images/150.png" />
+	</div>
+	<form onsubmit="return false;">
+		<input type="text" id="password" class="text" onkeyup="if(event.keyCode===13)login();" placeholder="登录凭证">
+	</form>
+	<div class="signin">
+		<input type="submit" value="登录" onclick="login();">
+	</div>
+</div>
+<div class="copy-rights">
+	<p>Copyright &copy; ZhengChen</p>
+</div>
+</body>
+</html>
