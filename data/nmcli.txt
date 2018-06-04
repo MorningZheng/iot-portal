@@ -1,0 +1,58 @@
+GENERAL.DEVICE:                         enxc0742bfff9b0
+GENERAL.TYPE:                           ethernet
+GENERAL.HWADDR:                         C0:74:2B:FF:F9:B0
+GENERAL.MTU:                            1500
+GENERAL.STATE:                          100 (connected)
+GENERAL.CONNECTION:                     Wired connection 1
+GENERAL.CON-PATH:                       /org/freedesktop/NetworkManager/ActiveConnection/0
+WIRED-PROPERTIES.CARRIER:               on
+IP4.ADDRESS[1]:                         192.168.123.9/24
+IP4.GATEWAY:                            192.168.123.1
+IP4.ROUTE[1]:                           dst = 169.254.0.0/16, nh = 0.0.0.0, mt = 1000
+IP4.DNS[1]:                             192.168.123.1
+IP4.DOMAIN[1]:                          lan
+IP6.ADDRESS[1]:                         fe80::c274:2bff:feff:f9b0/64
+IP6.GATEWAY:
+
+GENERAL.DEVICE:                         bridge0x1
+GENERAL.TYPE:                           bridge
+GENERAL.HWADDR:                         0A:FC:51:D9:B5:7B
+GENERAL.MTU:                            1500
+GENERAL.STATE:                          10 (unmanaged)
+GENERAL.CONNECTION:                     --
+GENERAL.CON-PATH:                       --
+IP4.ADDRESS[1]:                         192.168.8.1/24
+IP4.GATEWAY:
+IP6.ADDRESS[1]:                         fe80::8fc:51ff:fed9:b57b/64
+IP6.GATEWAY:
+
+GENERAL.DEVICE:                         eth0
+GENERAL.TYPE:                           ethernet
+GENERAL.HWADDR:                         0A:FC:51:D9:B5:7B
+GENERAL.MTU:                            1500
+GENERAL.STATE:                          10 (unmanaged)
+GENERAL.CONNECTION:                     --
+GENERAL.CON-PATH:                       --
+WIRED-PROPERTIES.CARRIER:               off
+
+GENERAL.DEVICE:                         lo
+GENERAL.TYPE:                           loopback
+GENERAL.HWADDR:                         00:00:00:00:00:00
+GENERAL.MTU:                            16436
+GENERAL.STATE:                          10 (unmanaged)
+GENERAL.CONNECTION:                     --
+GENERAL.CON-PATH:                       --
+IP4.ADDRESS[1]:                         127.0.0.1/8
+IP4.GATEWAY:
+IP6.ADDRESS[1]:                         ::1/128
+IP6.GATEWAY:
+
+GENERAL.DEVICE:                         wlan0
+GENERAL.TYPE:                           wifi
+GENERAL.HWADDR:                         10:A4:BE:46:40:18
+GENERAL.MTU:                            1500
+GENERAL.STATE:                          10 (unmanaged)
+GENERAL.CONNECTION:                     --
+GENERAL.CON-PATH:                       --
+IP4.GATEWAY:
+IP6.GATEWAY:

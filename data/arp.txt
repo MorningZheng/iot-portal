@@ -1,0 +1,3 @@
+? (192.168.1.107) at e4:b3:18:22:fd:0d [ether]  on apcli0
+? (192.168.1.1) at 3c:46:d8:47:a8:97 [ether]  on apcli0
+? (192.168.123.205) at f0:1e:34:12:4f:03 [ether]  on br0

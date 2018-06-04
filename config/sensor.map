@@ -1,0 +1,42 @@
+{
+	"0": {
+		"id": "0",
+		"type": "center",
+		"tag": "全屋;",
+		"link": "shutdown>find(tag,'电动窗帘'):close;"
+	},
+	"1": {
+		"id": "1",
+		"type": "HM1",
+		"tag": "客厅;",
+		"link": "move>find(tag,'全屋','中控'):moved;"
+	},
+	"2": {
+		"id": "2",
+		"type": "HM1",
+		"tag": "卧室;",
+		"link": "move>find(tag,'全屋','中控'):moved;"
+	},
+	"3": {
+		"id": "3",
+		"type": "M2",
+		"tag": "大门;",
+		"link": "open>find(tag,'全屋','中控'):opened;close>find(tag,'全屋','中控'):closed;"
+	},
+	"4": {
+		"id": "4",
+		"type": "HY86-16A",
+		"tag": "客厅;"
+	},
+	"DC4F22216699": {
+		"id": "DC4F22216699",
+		"type": "ZC-KT320",
+		"tag": "卧室;"
+	},
+	"DC4F22216688": {
+		"id": "DC4F22216688",
+		"type": "ZC-TS3",
+		"tag": "卧室;",
+		"link": "close>(find(tag,'卧室','电动窗帘')):close;"
+	}
+}

@@ -1,0 +1,10 @@
+iptables -t raw -A PREROUTING -i bridge0x1 -p tcp -m multiport --dport 22,53,80,443,8080 -j ACCEPT
+iptables -t raw -A PREROUTING -i bridge0x1 -p udp -m multiport --dport 22,53,67,68,546,8080 -j ACCEPT
+iptables -t raw -A PREROUTING -i bridge0x1 -j DROP
+iptables -t nat -A PREROUTING -i bridge0x1 -p tcp --dport 80 -j DNAT --to-destination 192.168.8.1:80
+iptables -t nat -A PREROUTING -i bridge0x1 -p tcp --dport 8080 -j DNAT --to-destination 192.168.8.1:8080
+iptables -t nat -A PREROUTING -i bridge0x1 -p tcp --dport 443 -j DNAT --to-destination 192.168.8.1:443
+iptables -t nat -A POSTROUTING -j MASQUERADE iptables -t raw -I PREROUTING -m mac --mac-source E4:B3:18:22:FD:0D -j ACCEPT
+iptables -t nat -I PREROUTING -m mac --mac-source E4:B3:18:22:FD:0D -j ACCEPT
+iptables-restore > /home/amethyst/portal/config/iptables.bak
+arp -av 192.168.8.164arp -av 192.168.8.164iptables -t raw -I PREROUTING -m mac --mac-source DC:F0:90:81:09:FA -j ACCEPTiptables -t nat -I PREROUTING -m mac --mac-source DC:F0:90:81:09:FA -j ACCEPTarp -av 192.168.8.164iptables -t raw -D PREROUTING -m mac --mac-source DC:F0:90:81:09:FA -j ACCEPTiptables -t nat -D PREROUTING -m mac --mac-source DC:F0:90:81:09:FA -j ACCEPTarp -av 192.168.8.164iptables -t raw -I PREROUTING -m mac --mac-source DC:F0:90:81:09:FA -j ACCEPTiptables -t nat -I PREROUTING -m mac --mac-source DC:F0:90:81:09:FA -j ACCEPTarp -av 192.168.8.164pkill -SIGHUP hostapdpkill -SIGHUP hostapdpkill -SIGHUP hostapdpkill -SIGHUP hostapdiptables -t raw -D PREROUTING -m mac --mac-source DC:F0:90:81:09:FA -j ACCEPTiptables -t nat -D PREROUTING -m mac --mac-source DC:F0:90:81:09:FA -j ACCEPTiptables -t raw -I PREROUTING -m mac --mac-source DC:F0:90:81:09:FA -j ACCEPTiptables -t nat -I PREROUTING -m mac --mac-source DC:F0:90:81:09:FA -j ACCEPT

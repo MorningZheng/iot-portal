@@ -1,0 +1,11 @@
+auto lo
+iface lo inet loopback
+
+auto bridge0x1
+allow-hotplug bridge0x1
+iface bridge0x1 inet static
+        address 192.168.225.1
+        network 192.168.225.0
+        netmask 255.255.255.0
+        broadcast 192.168.225.255
+        bridge-ports wlan0 eth0
